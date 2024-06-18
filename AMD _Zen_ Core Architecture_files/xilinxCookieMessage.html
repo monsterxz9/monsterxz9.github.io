@@ -1,0 +1,37 @@
+
+<!-- saved from url=(0072)https://www.xilinx.com/content/dam/xilinx/cssjs/xilinxCookieMessage.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script>
+            (function() {
+                const parentWindow = window.parent;
+                /**
+                 * Returns a cookie value if a name is specified. Otherwise returns the entire cookies as an object
+                 * @param [name] - The name of the cookie to fetch the value for. Returns the entire map of cookies if not specified
+                 * @returns {string} - The value of the cookie specified by `name` if specified. Otherwise returns an empty string.
+                 */
+                function getCookie(name) {
+                    const cookies = document.cookie.split(';')
+                        .reduce((acc, cookieString) => {
+                            const [key, value] = cookieString.split('=').map(s => s.trim());
+                            if (key && value) {
+                                acc[key] = decodeURIComponent(value);
+                            }
+                            return acc;
+                        }, {});
+                    return name ? cookies[name] || '' : cookies;
+                }
+                const message = {};
+                message.oms_sid = getCookie('oms_sid') || '';
+                if (window.self !== window.top && (message.oms_sid !== '' && message.oms_sid !== undefined)) {
+                    console.log(message)
+                    parentWindow.postMessage(message, '*')
+                }
+                else {
+                    console.log(message);
+                }
+            })();
+            
+        </script>
+</head>
+
+<body></body></html>
