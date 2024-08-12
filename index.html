@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Content</title>
+    <title>Freedom</title>
     <style>
         body {
             display: flex;
@@ -12,32 +12,59 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #87CEEB;
+            /* Sky blue background */
             font-family: Arial, sans-serif;
         }
 
         .content {
             text-align: center;
             font-size: 2em;
-            /* Adjust the font size here */
-            color: #333;
-            /* Text color */
-            padding: 20px;
-            background: #fff;
-            /* Background color for the content */
+            color: #FFFFFF;
+            /* White text */
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            /* Semi-transparent white */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            /* Frosted glass effect */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 0.7em;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #FFD700;
+            /* Gold color on hover */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
             border-radius: 10px;
-            /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Shadow effect */
         }
     </style>
 </head>
 
 <body>
     <div class="content">
-        <!-- Embed your content here, for example: -->
-        <iframe src="https://github.com/monsterxz9/BreakingWall" width="800" height="600"
-            style="border: none;"></iframe>
+        <h1><a href="https://github.com/monsterxz9/BreakingWall" target="_blank">Freedom</a></h1>
+        <p>Liberty is not merely a privilege not to be surrendered but a responsibility to be exercised.</p>
+        <img src="https://juliabettencourt.com/blog/the-symbols-of-freedom-essay/" alt="Symbol of Freedom" />
     </div>
 </body>
 
