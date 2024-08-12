@@ -4,67 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freedom</title>
+    <title>Freedom - A Responsibility to Exercise</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
             margin: 0;
-            background-color: #87CEEB;
-            /* Sky blue background */
-            font-family: Arial, sans-serif;
+            padding: 0;
         }
 
-        .content {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
             text-align: center;
-            font-size: 2em;
-            color: #FFFFFF;
-            /* White text */
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            /* Semi-transparent white */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            /* Frosted glass effect */
+            padding: 1em;
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin: 0;
         }
 
-        p {
-            font-size: 0.7em;
-            line-height: 1.5;
+        .content {
+            padding: 20px;
         }
 
-        a {
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #FFD700;
-            /* Gold color on hover */
+        .quote {
+            font-style: italic;
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-size: 1.2em;
         }
 
         img {
             max-width: 100%;
             height: auto;
-            margin-top: 20px;
+            display: block;
+            margin: 20px auto;
             border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+            font-size: 0.9em;
         }
     </style>
 </head>
 
 <body>
-    <div class="content">
-        <h1><a href="https://github.com/monsterxz9/BreakingWall" target="_blank">Freedom</a></h1>
-        <p>Liberty is not merely a privilege not to be surrendered but a responsibility to be exercised.</p>
-        <img src="https://juliabettencourt.com/blog/the-symbols-of-freedom-essay/" alt="Symbol of Freedom" />
+    <div class="container">
+        <header>
+            <h1>Freedom</h1>
+        </header>
+
+        <div class="content">
+            <div class="quote">
+                <p>"Liberty is not merely a privilege not to be surrendered but a responsibility to be exercised."</p>
+            </div>
+
+            <img src="freedom.jpg" alt="Symbol of Freedom - Statue of Liberty">
+
+            <p>Freedom is a fundamental human right and a cornerstone of democratic societies. It empowers individuals
+                to make choices, express themselves, and pursue their aspirations without undue interference.</p>
+
+            <p>To learn more about the ongoing struggle for freedom around the world, visit our <a
+                    href="https://github.com/monsterxz9/BreakingWall" target="_blank">GitHub project</a>.</p>
+        </div>
+
+        <footer>
+            &copy; 2024 Freedom Project. All rights reserved.
+        </footer>
     </div>
 </body>
 
