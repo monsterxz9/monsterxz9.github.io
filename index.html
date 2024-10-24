@@ -1,105 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freedom - A Responsibility to Exercise</title>
+    <title>JD Stock Price</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            background-color: #3498db;
+            background-color: transparent;
             color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        h1 {
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #34495e;
-            border-left: 4px solid #3498db;
-            padding-left: 20px;
-            margin: 20px 0;
-            font-size: 1.2em;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #2980b9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #34495e;
-            color: white;
-            font-size: 0.9em;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Freedom</h1>
-        </header>
+    <div id="stock-price">Loading...</div>
 
-        <div class="content">
-            <div class="quote">
-                <p>"Liberty is not merely a privilege not to be surrendered but a responsibility to be exercised."</p>
-            </div>
+    <script>
+        function fetchStockPrice() {
+            fetch('http://hq.sinajs.cn/list=usJD')
+                .then(response => response.text())
+                .then(data => {
+                    const stockInfo = data.split(',');
+                    const stockPrice = stockInfo[1];  // 获取股价部分
+                    document.getElementById('stock-price').innerText = stockPrice;
+                })
+                .catch(error => {
+                    document.getElementById('stock-price').innerText = 'Error';
+                });
+        }
 
-            <img src="freedom.jpg" alt="Symbol of Freedom - Statue of Liberty">
-
-            <p>Freedom is a fundamental human right and a cornerstone of democratic societies. It empowers individuals
-                to make choices, express themselves, and pursue their aspirations without undue interference.</p>
-
-            <p>To learn more about the ongoing struggle for freedom around the world, visit our <a
-                    href="https://github.com/monsterxz9/BreakingWall" target="_blank">GitHub project</a>.</p>
-        </div>
-
-        <footer>
-            &copy; 2024 Freedom Project. All rights reserved.
-        </footer>
-    </div>
+        // 初始获取
+        fetchStockPrice();
+        // 每隔30秒刷新一次
+        setInterval(fetchStockPrice, 30000);
+    </script>
 </body>
 
 </html>
